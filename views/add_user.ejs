@@ -1,0 +1,26 @@
+<!-- include header -->
+<%- include('include/_header.ejs') -%>
+<!-- /include header -->
+
+<!-- 메인 -->
+<main id="site-main">
+	<div class="container">
+		<div class="box-nav d-flex justify-between">
+			<div class="filter">
+				<a href="/"><i class="fas fa-angle-double-left"></i> 모든 사용자</a>
+			</div>
+		</div>
+		<div class="form-title text-center">
+			<h2 class="text-dark">신규 사용자</h2>
+			<span class="text-light">아래 양식을 사용하여 새 계정을 만드십시오.</span>
+		</div>
+
+		<!-- add user form -->
+		<%- include('include/_form.ejs') %>
+	</div>
+</main>
+<!-- 메인 -->
+
+<!-- include footer -->
+<%- include('include/_footer.ejs') -%>
+<!-- /include footer -->

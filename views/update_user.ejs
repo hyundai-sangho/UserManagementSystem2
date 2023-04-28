@@ -1,0 +1,66 @@
+<!-- include header -->
+<%- include('include/_header.ejs') -%>
+<!-- /include header -->
+
+<!-- 메인 -->
+<main id="site-main">
+	<div class="container">
+		<div class="box-nav d-flex justify-between">
+			<div class="filter">
+				<a href="/"><i class="fas fa-angle-double-left"></i> 모든 사용자</a>
+			</div>
+		</div>
+		<div class="form-title text-center">
+			<h2 class="text-dark">사용자 업데이트</h2>
+			<span class="text-light">아래 양식을 사용하여 계정을 업데이트하세요.</span>
+		</div>
+
+		<!-- update user form -->
+		<!-- form handling -->
+		<form method="POST" id="update_user">
+			<div class="new__user">
+				<div class="form-group">
+					<label for="name" class="text-light">이름</label>
+					<input type="hidden" name="id" value="<%= user._id %>" />
+					<input type="text" name="name" value="<%= user.name %>" placeholder="홍길동" />
+				</div>
+				<div class="form-group">
+					<label for="Email" class="text-light">이메일</label>
+					<input type="text" name="email" value="<%= user.email %>" placeholder="example@naver.com" />
+				</div>
+				<div class="form-group">
+					<label for="gender" class="text-light">성별</label>
+					<div class="radio inline">
+						<input type="radio" name="gender" value="남자" id="gender1" <%= user.gender == '남자' ? 'checked' : '' %> />
+						<label for="gender1" class="radio-label">남자</label>
+					</div>
+					<div class="radio inline">
+						<input type="radio" name="gender" value="여자" id="gender2" <%= user.gender == '여자' ? 'checked' : '' %> />
+						<label for="gender2" class="radio-label">여자</label>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="status" class="text-light">상태</label>
+					<div class="radio inline">
+						<input type="radio" name="status" value="공개" id="status1" <%= user.status == '공개' ? 'checked' : '' %> />
+						<label for="status1" class="radio-label">공개</label>
+					</div>
+					<div class="radio inline">
+						<input type="radio" name="status" value="비공개" id="status2" <%= user.status == '비공개' ? 'checked' : '' %> />
+						<label for="status2" class="radio-label">비공개</label>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<button type="submit" class="btn text-dark update">저장</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</main>
+<!-- 메인 -->
+
+<!-- include footer -->
+<%- include('include/_footer.ejs') -%>
+<!-- /include footer -->
